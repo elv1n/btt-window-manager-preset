@@ -37,7 +37,7 @@ WindowManager [hosted](https://btt-window-manager.netlify.com/) on netlify but y
 
 
 #### Self-hosted html
-1. Download html: [WindowManager.html](WindowManager.html)
+1. Save page [WindowManager.html](https://raw.githubusercontent.com/elv1n/btt-window-manager-preset/master/WindowManager.html)
 2. Change the link to downloaded html path.
 ![Screenshot](img/find-webview.png)
 ![Screenshot](img/change-link.png)
