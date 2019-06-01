@@ -386,7 +386,7 @@
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
           "BTTPredefinedActionType" : 249,
           "BTTPredefinedActionName" : "Show Floating WebView\/HTML Menu",
-          "BTTActionURLToLoad" : "https:\/\/raw.githubusercontent.com\/elv1n\/btt-window-manager-preset\/master\/index.html",
+          "BTTActionURLToLoad" : "https:\/\/btt-window-manager.netlify.com",
           "BTTActionFloatingHTMLName" : "WindowsManagerMenu",
           "BTTActionFloatingHTMLConfig" : "{\"BTTCenterOnOpen\":false,\"BTTShowButtons\":false,\"BTTSize\":\"{116, 125}\",\"BTTCloseOnOutsideClick\":true,\"BTTCloseOnBrowserOpen\":false,\"BTTDoNotCache\":true,\"BTTDrawTitleBezel\":false,\"BTTUseWhiteBackground\":false}",
           "BTTAdditionalConfiguration" : "1179658",
