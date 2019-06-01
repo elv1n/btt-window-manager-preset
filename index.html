@@ -80,6 +80,7 @@
     const LEFT = 'ArrowLeft';
     const RIGHT = 'ArrowRight';
     const keys = [UP, DOWN, LEFT, RIGHT];
+    const secret = (new URLSearchParams(window.location.search)).get('secret');
 
     let position = null;
     const activeClass = 'active';
@@ -102,7 +103,7 @@
     const resetActive = () => getActive() && getActive().classList.remove(activeClass);
 
     const bttHandler = (trigger) => {
-      window.BTT.callHandler('trigger_named', { trigger_name: trigger, closeFloatingHTMLMenu: 1, shared_secret: 'WindowManager' })
+      window.BTT.callHandler('trigger_named', { trigger_name: trigger, closeFloatingHTMLMenu: 1, shared_secret: secret })
       position = null;
       resetActive();
     };
