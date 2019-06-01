@@ -34,9 +34,11 @@
       fill: #1a1a1a;
       stroke: #1a1a1a;
     }
-    #list a:hover svg, #list .item.active a svg {
-        fill: #2b719c;
-        stroke: #2b719c;
+
+    #list a:hover svg,
+    #list .item.active a svg {
+      fill: #2b719c;
+      stroke: #2b719c;
     }
 
     .rotate-1 {
@@ -66,7 +68,7 @@
       margin: 0 auto;
     }
   </style>
-    <script>
+  <script>
     // this function is called everyime you open the menu in BTT
     function BTTInitialize() { }
     // this function is called everytime you close the menu
@@ -100,7 +102,7 @@
     const resetActive = () => getActive() && getActive().classList.remove(activeClass);
 
     const bttHandler = (trigger) => {
-      window.BTT.callHandler('trigger_named', { trigger_name: trigger, closeFloatingHTMLMenu: 1 })
+      window.BTT.callHandler('trigger_named', { trigger_name: trigger, closeFloatingHTMLMenu: 1, shared_secret: 'WindowManager' })
       position = null;
       resetActive();
     };
@@ -175,26 +177,26 @@
 
     const go = key => {
       switch (key) {
-          case RIGHT:{
-            position = position ? position < 16 ? position + 1 : 1 : 7;
-            break;
+        case RIGHT: {
+          position = position ? position < 16 ? position + 1 : 1 : 7;
+          break;
+        }
+        case LEFT: {
+          position = position ? position > 1 ? position - 1 : 16 : 10;
+          break;
+        }
+        case UP:
+          position = position ? position - 4 : 6;
+          if (position < 1) {
+            position += 16;
           }
-          case LEFT: {
-            position = position ? position > 1 ? position - 1 : 16 : 10;
-            break;
+          break;
+        case DOWN:
+          position = position ? position + 4 : 11;
+          if (position > 16) {
+            position -= 16;
           }
-          case UP:
-            position = position ? position - 4 : 6;
-            if (position < 1) {
-              position += 16;
-            }
-            break;
-          case DOWN:
-            position = position ? position + 4 : 11;
-            if (position > 16) {
-              position -= 16;
-            }
-            break;
+          break;
       }
       activate();
     };
@@ -202,7 +204,7 @@
     document.addEventListener('keydown', e => {
       e.preventDefault();
       e.stopImmediatePropagation();
-      if(keys.includes(e.key)) {
+      if (keys.includes(e.key)) {
         go(e.key);
       }
       if (e.key === 'r') {
@@ -216,46 +218,170 @@
   </script>
 </head>
 <svg style="display:none;">
-    <symbol id="top" viewBox="0 0 500 500">
-        <defs><path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="g12zdLsMQu"/><path d="M15 15L485 15L485 250L15 250L15 15Z" id="cwyXjrlAp"/></defs><g><g><g><use xlink:href="#g12zdLsMQu" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1"/></g></g><g><use xlink:href="#cwyXjrlAp" opacity="1"  fill-opacity="1"/></g></g>
-    </symbol>
-    <symbol id="topleft" viewBox="0 0 500 500">
-        <defs><path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="c2jetk1Rxw"/><path d="M0 0L250 0L250 250L0 250L0 0Z" id="b5d9E3bAYj"/></defs><g><g><g><use xlink:href="#c2jetk1Rxw" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1"/></g></g><g><use xlink:href="#b5d9E3bAYj" opacity="1"  fill-opacity="1"/></g></g>
-    </symbol>
-    <symbol id="max" viewBox="0 0 500 500">
-        <defs><path d="M-1.44 -3.24L500 -3.24L500 500L-1.44 500L-1.44 -3.24Z" id="a45hoWes"/></defs><g><g><use xlink:href="#a45hoWes" opacity="1"  fill-opacity="1"/></g></g>
-    </symbol>
-    <symbol id="center" viewBox="0 0 500 500">
-        <defs><path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="b5NDGtPLb"/><path d="M125 125L375 125L375 375L125 375L125 125Z" id="atR9fSZkB"/></defs><g><g><g><use xlink:href="#b5NDGtPLb" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1"/></g></g><g><use xlink:href="#atR9fSZkB" opacity="1"  fill-opacity="1"/></g></g>
-    </symbol>
-    <symbol id="lefttwothird" viewBox="0 0 500 500">
-        <defs><path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="c2K9VteeFJ"/><path d="M334.76 -4.4L334.76 465.6L28.72 465.6L28.72 -4.4L334.76 -4.4Z" id="eocbjQLZd"/></defs><g><g><g><use xlink:href="#c2K9VteeFJ" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1"/></g></g><g><use xlink:href="#eocbjQLZd" opacity="1"  fill-opacity="1"/></g></g>
-    </symbol>
-    <symbol id="righttwothird" viewBox="0 0 500 500">
-        <defs><path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="c2K9VteeFJ"/><path d="M334.76 -4.4L334.76 465.6L28.72 465.6L28.72 -4.4L334.76 -4.4Z" id="eocbjQLZd"/></defs><g><g><g><use xlink:href="#c2K9VteeFJ" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1"/></g></g><g><use xlink:href="#eocbjQLZd" opacity="1"  fill-opacity="1"/></g></g>
-    </symbol>
-    <symbol id="next" viewBox="0 0 500 500">
-        <defs><path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="a4aWit3br4"/><path d="M244.94 361.35L77.88 250L244.94 138.65L244.94 209.24L422.12 209.24L422.12 290.94L244.94 290.94L244.94 361.35Z" id="b1eEcbxIuR"/></defs><g><g><g><use xlink:href="#a4aWit3br4" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1"/></g></g><g><use xlink:href="#b1eEcbxIuR" opacity="1"  fill-opacity="1"/></g></g>
-    </symbol>
-    <symbol id="maxnext" viewBox="0 0 500 500">
-        <defs><path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="bipAUW6oL"/><path d="M244.94 361.35L77.88 250L244.94 138.65L244.94 209.24L422.12 209.24L422.12 290.94L244.94 290.94L244.94 361.35Z" id="e4GV34CKK"/></defs><g><g><use xlink:href="#bipAUW6oL" opacity="1"  fill-opacity="1"/></g><g><use xlink:href="#e4GV34CKK" opacity="1" fill="#f5f5f5" fill-opacity="1"/></g></g>
-    </symbol>
-    <symbol id="resize" viewBox="0 0 500 500">
-        <g><path d="M180.156,225.828c-1.903-1.902-4.093-2.854-6.567-2.854c-2.475,0-4.665,0.951-6.567,2.854l-94.787,94.787l-41.112-41.117
+  <symbol id="top" viewBox="0 0 500 500">
+    <defs>
+      <path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="g12zdLsMQu" />
+      <path d="M15 15L485 15L485 250L15 250L15 15Z" id="cwyXjrlAp" />
+    </defs>
+    <g>
+      <g>
+        <g>
+          <use xlink:href="#g12zdLsMQu" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1" />
+        </g>
+      </g>
+      <g>
+        <use xlink:href="#cwyXjrlAp" opacity="1" fill-opacity="1" />
+      </g>
+    </g>
+  </symbol>
+  <symbol id="topleft" viewBox="0 0 500 500">
+    <defs>
+      <path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="c2jetk1Rxw" />
+      <path d="M0 0L250 0L250 250L0 250L0 0Z" id="b5d9E3bAYj" />
+    </defs>
+    <g>
+      <g>
+        <g>
+          <use xlink:href="#c2jetk1Rxw" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1" />
+        </g>
+      </g>
+      <g>
+        <use xlink:href="#b5d9E3bAYj" opacity="1" fill-opacity="1" />
+      </g>
+    </g>
+  </symbol>
+  <symbol id="max" viewBox="0 0 500 500">
+    <defs>
+      <path d="M-1.44 -3.24L500 -3.24L500 500L-1.44 500L-1.44 -3.24Z" id="a45hoWes" />
+    </defs>
+    <g>
+      <g>
+        <use xlink:href="#a45hoWes" opacity="1" fill-opacity="1" />
+      </g>
+    </g>
+  </symbol>
+  <symbol id="center" viewBox="0 0 500 500">
+    <defs>
+      <path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="b5NDGtPLb" />
+      <path d="M125 125L375 125L375 375L125 375L125 125Z" id="atR9fSZkB" />
+    </defs>
+    <g>
+      <g>
+        <g>
+          <use xlink:href="#b5NDGtPLb" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1" />
+        </g>
+      </g>
+      <g>
+        <use xlink:href="#atR9fSZkB" opacity="1" fill-opacity="1" />
+      </g>
+    </g>
+  </symbol>
+  <symbol id="lefttwothird" viewBox="0 0 500 500">
+    <defs>
+      <path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="c2K9VteeFJ" />
+      <path d="M334.76 -4.4L334.76 465.6L28.72 465.6L28.72 -4.4L334.76 -4.4Z" id="eocbjQLZd" />
+    </defs>
+    <g>
+      <g>
+        <g>
+          <use xlink:href="#c2K9VteeFJ" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1" />
+        </g>
+      </g>
+      <g>
+        <use xlink:href="#eocbjQLZd" opacity="1" fill-opacity="1" />
+      </g>
+    </g>
+  </symbol>
+  <symbol id="righttwothird" viewBox="0 0 500 500">
+    <defs>
+      <path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="c2K9VteeFJ" />
+      <path d="M334.76 -4.4L334.76 465.6L28.72 465.6L28.72 -4.4L334.76 -4.4Z" id="eocbjQLZd" />
+    </defs>
+    <g>
+      <g>
+        <g>
+          <use xlink:href="#c2K9VteeFJ" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1" />
+        </g>
+      </g>
+      <g>
+        <use xlink:href="#eocbjQLZd" opacity="1" fill-opacity="1" />
+      </g>
+    </g>
+  </symbol>
+  <symbol id="next" viewBox="0 0 500 500">
+    <defs>
+      <path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="a4aWit3br4" />
+      <path
+        d="M244.94 361.35L77.88 250L244.94 138.65L244.94 209.24L422.12 209.24L422.12 290.94L244.94 290.94L244.94 361.35Z"
+        id="b1eEcbxIuR" />
+    </defs>
+    <g>
+      <g>
+        <g>
+          <use xlink:href="#a4aWit3br4" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1" />
+        </g>
+      </g>
+      <g>
+        <use xlink:href="#b1eEcbxIuR" opacity="1" fill-opacity="1" />
+      </g>
+    </g>
+  </symbol>
+  <symbol id="maxnext" viewBox="0 0 500 500">
+    <defs>
+      <path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="bipAUW6oL" />
+      <path
+        d="M244.94 361.35L77.88 250L244.94 138.65L244.94 209.24L422.12 209.24L422.12 290.94L244.94 290.94L244.94 361.35Z"
+        id="e4GV34CKK" />
+    </defs>
+    <g>
+      <g>
+        <use xlink:href="#bipAUW6oL" opacity="1" fill-opacity="1" />
+      </g>
+      <g>
+        <use xlink:href="#e4GV34CKK" opacity="1" fill="#f5f5f5" fill-opacity="1" />
+      </g>
+    </g>
+  </symbol>
+  <symbol id="resize" viewBox="0 0 500 500">
+    <g>
+      <path d="M180.156,225.828c-1.903-1.902-4.093-2.854-6.567-2.854c-2.475,0-4.665,0.951-6.567,2.854l-94.787,94.787l-41.112-41.117
 			c-3.617-3.61-7.895-5.421-12.847-5.421c-4.952,0-9.235,1.811-12.851,5.421c-3.617,3.621-5.424,7.905-5.424,12.854v127.907
 			c0,4.948,1.807,9.229,5.424,12.847c3.619,3.613,7.902,5.424,12.851,5.424h127.906c4.949,0,9.23-1.811,12.847-5.424
 			c3.615-3.617,5.424-7.898,5.424-12.847s-1.809-9.233-5.424-12.854l-41.112-41.104l94.787-94.793
-			c1.902-1.903,2.853-4.086,2.853-6.564c0-2.478-0.953-4.66-2.853-6.57L180.156,225.828z"/>
-            <path d="M433.11,5.424C429.496,1.807,425.212,0,420.263,0H292.356c-4.948,0-9.227,1.807-12.847,5.424
+			c1.902-1.903,2.853-4.086,2.853-6.564c0-2.478-0.953-4.66-2.853-6.57L180.156,225.828z" />
+      <path d="M433.11,5.424C429.496,1.807,425.212,0,420.263,0H292.356c-4.948,0-9.227,1.807-12.847,5.424
 			c-3.614,3.615-5.421,7.898-5.421,12.847s1.807,9.233,5.421,12.847l41.106,41.112l-94.786,94.787
 			c-1.901,1.906-2.854,4.093-2.854,6.567s0.953,4.665,2.854,6.567l32.552,32.548c1.902,1.903,4.086,2.853,6.563,2.853
 			s4.661-0.95,6.563-2.853l94.794-94.787l41.104,41.109c3.62,3.616,7.905,5.428,12.854,5.428s9.229-1.812,12.847-5.428
-			c3.614-3.614,5.421-7.898,5.421-12.847V18.268C438.53,13.315,436.734,9.04,433.11,5.424z"/></g>
-    </symbol>
-    <symbol id="fillY" viewBox="0 0 500 500">
-        <defs><path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="bOZhq82oj"/><path d="M236.83 264.45L169.78 415.53L102.73 264.45L145.23 264.45L145.23 104.22L194.43 104.22L194.43 264.45L236.83 264.45Z" id="b6p9tsfYTi"/><path d="M409.87 254.71L342.82 103.63L275.77 254.71L318.28 254.71L318.28 414.93L367.48 414.93L367.48 254.71L409.87 254.71Z" id="a38YkLLCJ6"/></defs><g><g><g><use xlink:href="#bOZhq82oj" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1"/></g></g><g><use xlink:href="#b6p9tsfYTi" opacity="1"  fill-opacity="1"/></g><g><use xlink:href="#a38YkLLCJ6" opacity="1"  fill-opacity="1"/></g></g>
-    </symbol>
+			c3.614-3.614,5.421-7.898,5.421-12.847V18.268C438.53,13.315,436.734,9.04,433.11,5.424z" />
+    </g>
+  </symbol>
+  <symbol id="fillY" viewBox="0 0 500 500">
+    <defs>
+      <path d="M15 15L485 15L485 317.82L485 485L15 485L15 15Z" id="bOZhq82oj" />
+      <path
+        d="M236.83 264.45L169.78 415.53L102.73 264.45L145.23 264.45L145.23 104.22L194.43 104.22L194.43 264.45L236.83 264.45Z"
+        id="b6p9tsfYTi" />
+      <path
+        d="M409.87 254.71L342.82 103.63L275.77 254.71L318.28 254.71L318.28 414.93L367.48 414.93L367.48 254.71L409.87 254.71Z"
+        id="a38YkLLCJ6" />
+    </defs>
+    <g>
+      <g>
+        <g>
+          <use xlink:href="#bOZhq82oj" opacity="1" fill-opacity="0" stroke-width="40" stroke-opacity="1" />
+        </g>
+      </g>
+      <g>
+        <use xlink:href="#b6p9tsfYTi" opacity="1" fill-opacity="1" />
+      </g>
+      <g>
+        <use xlink:href="#a38YkLLCJ6" opacity="1" fill-opacity="1" />
+      </g>
+    </g>
+  </symbol>
 </svg>
 <div id="list">
 </div>
+
 </html>
