@@ -6,7 +6,9 @@ Move and resize windows with easy and you don't need to keep to know a lot of co
 
 **Just press `⌘ + A` and choose the position**
 
-![Window manager menu](img/menu.png)  
+<center>
+<img src='img/menu.png' />
+</center>
 
 
 Additional commands
@@ -20,9 +22,31 @@ Additional commands
 
 After installing BetterTouchTool, you can import/export configurations from the Manage Presets button.
 
-**Download: [WindowManager.bttpreset](WindowManager.bttpreset)**
+1. **Download preset: [WindowManager.bttpreset](WindowManager.bttpreset)**
 
-![Screenshot](https://raw.githubusercontent.com/vas3k/btt-touchbar-presets/master/static/install.jpg?raw=true)
+2. Import preset
+![Screenshot](img/import.png)
+
+3. Last step is to specify secret key or download html. Check below both methods.
+
+**BTT requires secret key for security reason**
+
+WindowManager [hosted](https://btt-window-manager.netlify.com/) on netlify but you don't have a reason to trust something from open-source, so it would be easier and save to download html and change the html link in BTT settings.
+
+
+#### Self-hosted html
+1. Download html: [WindowManager.html](WindowManager.html)
+2. Change the link to downloaded html path.
+![Screenshot](img/find-webview.png)
+![Screenshot](img/change-link.png)
+
+#### Netlify-hosted html
+
+1. Get secret token and add to the link
+![Screenshot](img/secret.png)
+
+
+#### Done 🤟
 
 ## License
 
