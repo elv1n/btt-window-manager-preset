@@ -1,6 +1,6 @@
 # BetterTouchTool Window Manager
 
-Move and resize windows with easy and you don't need to keep to know a lot of commands.
+Move and resize windows with easy and you don't need to know a lot of commands.
 
 ![Window manager preview](img/preview.gif)  
 
@@ -12,11 +12,13 @@ Move and resize windows with easy and you don't need to keep to know a lot of co
 
 
 Additional commands
+
 *When Menu opened*
 
 * `←, ↑, →, ↓` - moving across the menu with arrow
 * `enter` - choose active item
-* `r` - start/stop resing. *When you start resizing you need to reopen menu to stop it*
+* `r` - start/stop resing.
+*When you start resizing you need to reopen menu to stop it*
 
 ## Installation
 
@@ -31,7 +33,7 @@ After installing BetterTouchTool, you can import/export configurations from the 
 
 **BTT requires secret key for security reason**
 
-WindowManager [hosted](https://btt-window-manager.netlify.com/) on netlify but you don't have a reason to trust something from open-source, so it would be easier and save to download html and change the html link in BTT settings.
+WindowManager [hosted](https://btt-window-manager.netlify.com/) on netlify but you don't have a reason to trust someone from open-source, so it will be easier and saver to download html and change the html link in BTT settings.
 
 
 #### Self-hosted html
