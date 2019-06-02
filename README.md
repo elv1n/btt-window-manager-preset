@@ -24,7 +24,7 @@ Additional commands
 
 After installing BetterTouchTool, you can import/export configurations from the Manage Presets button.
 
-1. **Download preset: [WindowManager.bttpreset](WindowManager.bttpreset)**
+1. **Download preset: [WindowManager.bttpreset](https://github.com/elv1n/btt-window-manager-preset/releases/download/1.0/WindowManager.bttpreset)**
 
 2. Import preset
 ![Screenshot](img/import.png)
@@ -37,7 +37,7 @@ WindowManager [hosted](https://btt-window-manager.netlify.com/) on netlify but y
 
 
 #### Self-hosted html
-1. Save page [WindowManager.html](https://raw.githubusercontent.com/elv1n/btt-window-manager-preset/master/WindowManager.html)
+1. Download [WindowManager.html](https://github.com/elv1n/btt-window-manager-preset/releases/download/1.0/WindowManager.html)
 2. Change the link to downloaded html path.
 ![Screenshot](img/find-webview.png)
 ![Screenshot](img/change-link.png)
