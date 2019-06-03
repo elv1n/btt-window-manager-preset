@@ -388,7 +388,7 @@
           "BTTPredefinedActionName" : "Show Floating WebView\/HTML Menu",
           "BTTActionURLToLoad" : "https:\/\/btt-window-manager.netlify.com",
           "BTTActionFloatingHTMLName" : "WindowsManagerMenu",
-          "BTTActionFloatingHTMLConfig" : "{\"BTTCenterOnOpen\":false,\"BTTShowButtons\":false,\"BTTSize\":\"{116, 125}\",\"BTTCloseOnOutsideClick\":true,\"BTTCloseOnBrowserOpen\":false,\"BTTDoNotCache\":true,\"BTTDrawTitleBezel\":false,\"BTTUseWhiteBackground\":false}",
+          "BTTActionFloatingHTMLConfig" : "{\"BTTCenterOnOpen\":false,\"BTTShowButtons\":false,\"BTTSize\":\"{116, 125}\",\"BTTCloseOnOutsideClick\":true,\"BTTCloseOnBrowserOpen\":false,\"BTTDoNotCache\":false,\"BTTDrawTitleBezel\":false,\"BTTUseWhiteBackground\":false}",
           "BTTAdditionalConfiguration" : "1179658",
           "BTTEnabled2" : 1,
           "BTTKeyboardShortcutKeyboardType" : 43,
