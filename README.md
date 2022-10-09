@@ -29,7 +29,7 @@ Additional commands
 
 After installing BetterTouchTool, you can import/export configurations from the Manage Presets button.
 
-1. **Download preset: [WindowManager.bttpreset](https://github.com/elv1n/btt-window-manager-preset/releases/download/2.0/WindowManager.bttpreset) and [index.html](https://github.com/elv1n/btt-window-manager-preset/releases/download/2.0/index.html)**
+1. **Download preset: [WindowManager.bttpreset](https://github.com/elv1n/btt-window-manager-preset/releases/download/2.0/WindowManager.bttpreset) and [WindowManager.html](https://github.com/elv1n/btt-window-manager-preset/releases/download/2.0/WindowManager.html)**
 
 2. Import preset
 ![Screenshot](img/import.png)
