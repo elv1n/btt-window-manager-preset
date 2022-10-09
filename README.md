@@ -8,7 +8,7 @@ Customise position preset the way you like!
 **Just press `⌘ + A` and choose the position**
 
 <center>
-<img src='img/menu.png' width='150' >" />
+<img src='img/menu.png' width='150' />
 </center>
 
 

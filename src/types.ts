@@ -88,10 +88,10 @@ const PRESET: Record<string, Positions> = {
     oneThird[2],
     common[3],
     quartersCenter[2],
-    quarters[2],
     quarters[3],
-    quartersCenter[1],
+    quarters[2],
     quartersCenter[3],
+    quartersCenter[1],
   ],
 };
 

@@ -15,7 +15,7 @@ const MAX_POSITION = positions.length;
 const activeClass = 'active';
 
 const getActive = () =>
-  document.querySelector<HTMLDivElement>(`.${activeClass}`);
+  document.querySelector<HTMLButtonElement>(`.${activeClass}`);
 
 const resetActive = () => getActive()?.classList.remove(activeClass);
 
@@ -76,10 +76,9 @@ document.addEventListener('keydown', e => {
     go(e.key);
   }
   if (e.key === 'Enter') {
-    const btn = getActive()?.querySelector('button');
-    if (btn != null) {
-      btn.click();
-    }
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    getActive()?.click();
   }
 });
 
