@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "lib": [
+      "es2015",
+      "es2017",
+      "dom"
+    ],
+    "strict": true,
+    "types": [
+      "jest"
+    ],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "noFallthroughCasesInSwitch": true,
+    "target": "es2021"
+  },
+  "include": [
+    "src",
+  ]
+}

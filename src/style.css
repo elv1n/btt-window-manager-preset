@@ -1,0 +1,102 @@
+:root {
+	--size: 25px;
+	--padding: 3px;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	color: #EEEEEE;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	background: #f3f3f3;
+}
+
+#list {
+	display: grid;
+	margin: var(--padding);
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	grid-column-gap: var(--padding);
+	grid-row-gap: var(--padding);
+}
+
+
+#list button {
+	box-sizing: content-box;
+	display: inline-flex;
+	position: relative;
+	background: transparent;
+	width: calc(var(--size) - 2px);
+	height: calc(var(--size) - 2px);
+	border: 2px solid #1a1a1a;
+	font-size: calc(4px + var(--size) / 2);
+}
+
+#settings .icon-wrap {
+	position: relative;
+	width: calc(var(--size) / 2);
+	height: calc(var(--size) / 2);
+	border: 1px solid #1a1a1a;
+	font-size: 14px;
+}
+
+.icon {
+	position: absolute;
+	background: #1a1a1a;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+}
+
+.top {
+	left: 0;
+	top: 0;
+}
+.left {
+	left: 0;
+	bottom: 0;
+}
+.right {
+	right: 0;
+	top: 0;
+}
+.bottom {
+	right: 0;
+	bottom: 0;
+}
+.middleX {
+	left: 25%;
+	top: 0;
+}
+.middleY {
+	top: 25%;
+	left: 0;
+}
+
+
+#list .active .icon,
+#list button:hover .icon {
+	background: #2b719c;
+	color: #2b719c !important;
+}
+
+#settings {
+	left: 0;
+	position: absolute;
+}
+
+.settings-item {
+	display: flex;
+	margin-bottom: 5px;
+}
+
+.settings-item input {
+	margin-left: 10px;
+}

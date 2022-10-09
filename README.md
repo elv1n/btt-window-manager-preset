@@ -1,13 +1,20 @@
 # BetterTouchTool Window Manager
 
 Move and resize windows with easy and you don't need to know a lot of commands.
+Customise position preset the way you like!
 
 ![Window manager preview](img/preview.gif)  
 
 **Just press `⌘ + A` and choose the position**
 
 <center>
-<img src='img/menu.png' />
+<img src='img/menu.png' width='150' >" />
+</center>
+
+
+WindowManager display different preset when the monitor height * 0.7 larger then width:
+<center>
+<img src='img/menu_portrait.png'width='150' />
 </center>
 
 
@@ -16,36 +23,46 @@ Additional commands
 *When Menu opened*
 
 * `←, ↑, →, ↓` - moving across the menu with arrow
-* `enter` - choose active item
-* `r` - start/stop resing.
-*When you start resizing you need to reopen menu to stop it*
+* `enter` - choose selected position
 
 ## Installation
 
 After installing BetterTouchTool, you can import/export configurations from the Manage Presets button.
 
-1. **Download preset: [WindowManager.bttpreset](https://github.com/elv1n/btt-window-manager-preset/releases/download/1.0/WindowManager.bttpreset)**
+1. **Download preset: [WindowManager.bttpreset](https://github.com/elv1n/btt-window-manager-preset/releases/download/2.0/WindowManager.bttpreset) and [index.html](https://github.com/elv1n/btt-window-manager-preset/releases/download/2.0/index.html)**
 
 2. Import preset
 ![Screenshot](img/import.png)
 
-3. Last step is to specify secret key or download html. Check below both methods.
+3. Change HTML source to a local path eg `/Users/$USER/Downloads/WindowManager.html`
 
-**BTT requires secret key for security reason**
-
-WindowManager [hosted](https://btt-window-manager.netlify.com/) on netlify but you don't have a reason to trust someone from open-source, so it will be easier and saver to download html and change the html link in BTT settings.
-
-
-#### Self-hosted html
-1. Download [WindowManager.html](https://github.com/elv1n/btt-window-manager-preset/releases/download/1.0/WindowManager.html)
-2. Change the link to downloaded html path.
-![Screenshot](img/find-webview.png)
 ![Screenshot](img/change-link.png)
 
-#### Netlify-hosted html
 
-1. Get secret token and add to the link
-![Screenshot](img/secret.png)
+#### Advanced installation 
+1. Clone the repo
+2. Install dependencies
+```shell
+yarn install
+```
+3. Generate HTML page
+```shell
+yarn build
+```
+4. Import preset `WindowManager.bttpreset`
+![Screenshot](img/find-webview.png)
+
+5. Change HTML source to locally generated file in `<root>/dist/WindowManager.html`
+
+#### Customization
+
+Run a local dev server to preview changes:
+```shell
+yarn start
+``` 
+
+* `src/types.ts` define custom preset
+* `src/style.css` customize icon size
 
 
 #### Done 🤟
