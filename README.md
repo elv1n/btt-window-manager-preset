@@ -62,7 +62,7 @@ yarn start
 ``` 
 
 * `src/types.ts` define custom preset
-* `src/style.css` customize icon size
+* `src/style.css` customize position icon
 
 
 #### Done 🤟

@@ -49,10 +49,15 @@ body {
 .icon {
 	position: absolute;
 	background: #1a1a1a;
+	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: #fff;
+}
+
+.icon.bright {
+	color: #1a1a1a;
+	background: #fff;
 }
 
 .top {
@@ -75,10 +80,16 @@ body {
 	left: 25%;
 	top: 0;
 }
+.middleX.s2\/3 { left: 12.5%; }
+.middleX.s1\/3 { left: 37.5%; }
+.middleX.s1\/2 { left: 25%; }
 .middleY {
 	top: 25%;
 	left: 0;
 }
+.middleY.s2\/3 { top: 12.5%; }
+.middleY.s1\/3 { top: 37.5%; }
+.middleY.s2\/3 { top: 25%; }
 
 
 #list .active .icon,

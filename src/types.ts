@@ -24,7 +24,8 @@ const sides: Side[] = [Side.Top, Side.Right, Side.Bottom, Side.Left];
 
 const getSides = (size: Size): Positions => sides.map(side => [size, side]);
 
-export type Positions = Array<[Size, Side]>;
+type Position = [Size, Side];
+export type Positions = Array<Position>;
 
 const quarters: Positions = getSides(Size.Quarter);
 const quartersCenter: Positions = [
@@ -33,13 +34,16 @@ const quartersCenter: Positions = [
 ];
 
 const halves: Positions = [
-  ...getSides(Size.Half),
-  [Size.Half, Side.MiddleX],
-  [Size.Half, Side.MiddleY],
+  ...getSides(Size.Half), // 0 - 3
+  [Size.Half, Side.MiddleX], // 4
+  [Size.Half, Side.MiddleY], // 5
 ];
 
 const oneThird = getSides(Size.OneThird);
 const twoThird = getSides(Size.TwoThird);
+const extras = {
+  twoThirdCenter: [Size.TwoThird, Side.MiddleX] as Position,
+};
 const common: Positions = [
   [Size.Full, Side.Top],
   [Size.FullBright, Side.Next],
@@ -70,8 +74,8 @@ const PRESET: Record<string, Positions> = {
     halves[1],
     quarters[0],
     quarters[1],
-    halves[0],
-    halves[2],
+    extras.twoThirdCenter,
+    halves[4],
     quarters[2],
     quarters[3],
   ],

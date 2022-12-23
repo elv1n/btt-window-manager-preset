@@ -85,6 +85,7 @@ document.addEventListener('keydown', e => {
 const createIcon = ([size, side]: [Size, Side]) => {
   let content = '';
   let style = '';
+  const classNames: string[] = ['icon', side];
   let domSize: [number, number] = [0, 0];
   switch (size) {
     case Size.Quarter:
@@ -100,20 +101,23 @@ const createIcon = ([size, side]: [Size, Side]) => {
       break;
     case Size.Half: {
       domSize = [100, 50];
+      classNames.push('s1/2');
       break;
     }
     case Size.TwoThird:
       domSize = [100, 75];
+      classNames.push('s2/3');
       break;
     case Size.OneThird:
       domSize = [100, 25];
+      classNames.push('s1/3');
       break;
     case Size.Full:
       domSize = [100, 100];
       break;
     case Size.FullBright:
       domSize = [100, 100];
-      style += 'background: #fff; color: #1a1a1a;';
+      classNames.push('bright');
       break;
     default:
       break;
@@ -141,7 +145,9 @@ const createIcon = ([size, side]: [Size, Side]) => {
 
   style += `width: ${domSize[0]}%; height: ${domSize[1]}%;`;
 
-  return `<span class="icon ${side}" style="${style}">${content}</span>`;
+  return `<span class="${classNames.join(
+    ' '
+  )}" style="${style}">${content}</span>`;
 };
 
 function renderSettings() {
