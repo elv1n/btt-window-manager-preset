@@ -62,22 +62,26 @@ const PRESET: Record<string, Positions> = {
     ...common,
   ],
   BASE: [
+    // top row
     common[0],
     quartersCenter[4],
     common[1],
     common[2],
-    twoThird[3],
-    twoThird[1],
+    // second row
     common[3],
+    halves[4],
+    extras.twoThirdCenter,
     common[4],
+    // third row
+    quarters[0],
     halves[3],
     halves[1],
-    quarters[0],
     quarters[1],
-    extras.twoThirdCenter,
-    halves[4],
-    quarters[2],
+    // forth row
     quarters[3],
+    twoThird[3],
+    twoThird[1],
+    quarters[2],
   ],
   BASE_VERTICAL: [
     common[0],
