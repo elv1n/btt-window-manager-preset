@@ -72,3 +72,15 @@ export const createNewElement = (id: string) => {
   document.body.appendChild(element);
   return element;
 };
+
+export const getGridPosition = (index: number) => {
+  const pos = index + 1;
+  if (pos < 1 || pos > 16) {
+    return { row: 0, column: 0 };
+  }
+
+  const row = Math.ceil(pos / 4);
+  const column = pos % 4 === 0 ? 4 : pos % 4;
+
+  return { row, column };
+};

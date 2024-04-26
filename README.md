@@ -17,6 +17,11 @@ WindowManager display different preset when the monitor height * 0.7 larger then
 <img src='img/menu_portrait.png'width='150' />
 </center>
 
+**Press `A` again to display shortcuts**
+<center>
+<img src='img/menu-with-letters.png' width='150' />
+</center>
+
 
 Additional commands
 

@@ -2,6 +2,14 @@
 import './style.css';
 import { Positions, positions, secondPositions, Side, Size } from './types';
 import { createNewElement, getTrigger, isSideX, isSideY } from './utils';
+import {
+  getLettersForIndex,
+  initLetterVisibility,
+  isShortcutLetter,
+  isShortcutLetterMatched,
+  setLetterVisibility,
+  toggleLetterVisibility,
+} from './letterShortcut';
 
 const UP = 'ArrowUp';
 const DOWN = 'ArrowDown';
@@ -16,7 +24,7 @@ const activeClass = 'active';
 
 const getActive = () =>
   document.querySelector<HTMLButtonElement>(`.${activeClass}`);
-
+let displaySecondLayerOnly = '';
 const resetActive = () => getActive()?.classList.remove(activeClass);
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -79,6 +87,31 @@ document.addEventListener('keydown', e => {
     e.preventDefault();
     e.stopImmediatePropagation();
     getActive()?.click();
+  }
+
+  const key = e.key.toLowerCase();
+  if (key === 'a') {
+    toggleLetterVisibility();
+  } else if (isShortcutLetter(key)) {
+    const isMatch = isShortcutLetterMatched(key);
+    if (isMatch) {
+      position = isMatch;
+      activate();
+      getActive()?.click();
+      displaySecondLayerOnly = '';
+      renderApp();
+    } else {
+      displaySecondLayerOnly = key;
+      renderApp();
+    }
+  }
+
+  if (
+    displaySecondLayerOnly !== '' &&
+    (e.key === 'Escape' || e.key === 'Backspace' || !isShortcutLetter(key))
+  ) {
+    displaySecondLayerOnly = '';
+    renderApp();
   }
 });
 
@@ -167,17 +200,19 @@ function renderSettings() {
 }
 
 const renderList = (el: HTMLDivElement, preset: Positions) => {
-  const elements = preset.map(pos => {
+  const elements = preset.map((pos, index) => {
     return `
         <button onclick="bttHandler('${getTrigger(pos)}')">
           ${createIcon(pos)}
+         ${getLettersForIndex(displaySecondLayerOnly, index)}
         </button>
     `;
   });
   el.innerHTML = `<div id="list">${elements.join('')}</div>`;
+  setLetterVisibility(el);
 };
 
-async function init() {
+function renderApp() {
   const app = document.getElementById('app');
   if (!(app instanceof HTMLDivElement)) {
     // eslint-disable-next-line no-alert
@@ -188,5 +223,10 @@ async function init() {
   if (secondPositions) {
     renderList(createNewElement('side'), secondPositions);
   }
+}
+function init() {
+  initLetterVisibility();
+  renderApp();
+  go(UP);
 }
 document.addEventListener('DOMContentLoaded', init);

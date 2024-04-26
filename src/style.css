@@ -111,3 +111,17 @@ body {
 .settings-item input {
 	margin-left: 10px;
 }
+
+span.letter {
+	position: absolute;
+	background: #ffff00b5;
+	font-size: 10px;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+	text-transform: uppercase;
+}
+
+.letter-visible span.letter {
+	opacity: 1;
+}
