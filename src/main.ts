@@ -78,14 +78,15 @@ const go = (key: string) => {
 };
 
 document.addEventListener('keydown', e => {
-  if (keys.includes(e.key)) {
+  const preventPropagation = !((e.key === 'Escape' || e.key === 'Backspace') && displaySecondLayerOnly === '');
+  if (preventPropagation) {
     e.preventDefault();
     e.stopImmediatePropagation();
+  }
+  if (keys.includes(e.key)) {
     go(e.key);
   }
   if (e.key === 'Enter') {
-    e.preventDefault();
-    e.stopImmediatePropagation();
     getActive()?.click();
   }
 
