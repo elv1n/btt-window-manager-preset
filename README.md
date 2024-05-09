@@ -69,6 +69,16 @@ yarn start
 * `src/types.ts` define custom preset
 * `src/style.css` customize position icon
 
+**How to change the size**
+Update css variable in style.css
+
+```css
+:root {
+	--size: 50px;
+	--padding: 3px;
+}
+```
+
 
 #### Done 🤟
 
