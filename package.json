@@ -13,8 +13,6 @@
     "vite-plugin-singlefile": "^0.12.2"
   },
   "eslintConfig": {
-    "extends": [
-      "elv1n-react"
-    ]
+    "extends": ["elv1n-react"]
   }
 }
