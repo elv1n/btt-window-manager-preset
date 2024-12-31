@@ -59,6 +59,12 @@ export const getTrigger = ([size, side]: [Size, Side]) => {
       break;
     }
   }
+
+  if (side === Side.IncreaseCenter) {
+    trigger.push('increase_center');
+  } else if (side === Side.DecreaseCenter) {
+    trigger.push('decrease_center');
+  }
   return trigger.join('_');
 };
 

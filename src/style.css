@@ -1,5 +1,5 @@
 :root {
-	--size: 25px;
+	--size: 50px;
 	--padding: 3px;
 }
 * {
@@ -79,6 +79,28 @@ body {
 .middleX {
 	left: 25%;
 	top: 0;
+}
+.increaseCenter,
+.decreaseCenter {
+	left: 20%;
+	top: 20%;
+}
+.increaseCenter::before {
+    content: '';
+    position: absolute;
+    width: 2px; /* thickness of the plus */
+    height: 60%; /* full height of the parent */
+    background: #fff; /* color of the plus */
+}
+
+.increaseCenter::after,
+.decreaseCenter::after {
+    content: '';
+    position: absolute;
+	margin: 2px;
+    height: 2px; /* thickness of the plus */
+    width: 60%; /* full width of the parent */
+    background: #fff; /* color of the plus */
 }
 .middleX.s2\/3 { left: 12.5%; }
 .middleX.s1\/3 { left: 37.5%; }

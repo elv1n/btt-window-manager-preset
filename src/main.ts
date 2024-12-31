@@ -22,6 +22,14 @@ const MAX_POSITION = positions.length;
 
 const activeClass = 'active';
 
+const closeMenu = (trigger: string): boolean => {
+  if(trigger === 'increase_center' || trigger === 'decrease_center') {
+    return false;
+  }
+  return true;
+}
+
+
 const getActive = () =>
   document.querySelector<HTMLButtonElement>(`.${activeClass}`);
 let displaySecondLayerOnly = '';
@@ -35,7 +43,7 @@ window.bttHandler = async (trigger: string) => {
   await window.callBTT('trigger_named', {
     trigger_name: trigger,
     // close popup
-    closeFloatingHTMLMenu: 1,
+    closeFloatingHTMLMenu: closeMenu(trigger) ? 1 : 0,
   });
   position = null;
   resetActive();
@@ -146,6 +154,9 @@ const createIcon = ([size, side]: [Size, Side]) => {
       domSize = [100, 25];
       classNames.push('s1/3');
       break;
+    case Size.PercentSquare60:
+      domSize = [60, 60];
+      break;
     case Size.Full:
       domSize = [100, 100];
       break;
@@ -173,9 +184,10 @@ const createIcon = ([size, side]: [Size, Side]) => {
 
   if (isSideX(side)) {
     domSize.reverse();
-  } else if (!isSideY(side)) {
+  } else if (!isSideY(side) && side !== Side.IncreaseCenter && side !== Side.DecreaseCenter) {
     style += 'left: 0; top: 0;';
   }
+
 
   style += `width: ${domSize[0]}%; height: ${domSize[1]}%;`;
 

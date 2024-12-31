@@ -59,12 +59,39 @@ yarn build
 
 5. Change HTML source to locally generated file in `<root>/dist/WindowManager.html`
 
-#### Customization
 
+### Running local dev server
 Run a local dev server to preview changes:
 ```shell
 yarn start
 ``` 
+
+#### Customization
+
+Create **`.env`**, where you can define next properties
+
+```js
+// src/vite-env.d.ts
+// display shortcuts
+readonly VITE_DISPLAY_SHORTCUTS: "true" | "false";
+// different display layout styles
+readonly VITE_DISPLAY_LAYOUT:
+	| "horizontal"
+	| "vertical"
+	| "size32"
+	| "advanced";
+// left side is a default value
+// value changing the letters used for shortcuts, right is based on the right keyboard part
+readonly VITE_KEYBOARD_SIDE: "left" | "right";
+```
+
+for example
+```bash
+// .env
+VITE_DISPLAY_SHORTCUTS = true
+VITE_DISPLAY_STYLE = size32
+VITE_KEYBOARD_SIDE = right
+```
 
 * `src/types.ts` define custom preset
 * `src/style.css` customize position icon
@@ -79,6 +106,7 @@ Update css variable in style.css
 }
 ```
 
+Run `yarn build` to generate a new window manager.
 
 #### Done 🤟
 
