@@ -3,7 +3,7 @@
 Move and resize windows with easy and you don't need to know a lot of commands.
 Customise position preset the way you like, or ask your agent!
 
-<video src="img/preview.mp4" width="600" autoplay loop muted></video>
+<video src="https://github.com/elv1n/btt-window-manager-preset/raw/refs/heads/master/img/preview.mp4" width="600" autoplay loop muted></video>
 
 **Just press `⌘ + ⇧ + A` and click the position**
 
