@@ -1,34 +1,41 @@
-# BetterTouchTool Window Manager
+# BetterTouchTool Window Manager preset
 
 Move and resize windows with easy and you don't need to know a lot of commands.
-Customise position preset the way you like!
+Customise position preset the way you like, or ask your agent!
 
-![Window manager preview](img/preview.gif)  
+![Window manager preview](img/preview.gif)
 
-**Just press `⌘ + A` and choose the position**
+**Just press `⌘ + ⇧ + A` and click the position**
 
-<center>
-<img src='img/menu.png' width='150' />
-</center>
+### Presets
 
+**Horizontal** (default)
 
-WindowManager display different preset when the monitor height * 0.7 larger then width:
-<center>
-<img src='img/menu_portrait.png'width='150' />
-</center>
+<img src='img/presets/horizontal.png' width='150' />
 
-**Press `A` again to display shortcuts**
-<center>
-<img src='img/menu-with-letters.png' width='150' />
-</center>
+**Vertical** — displayed when monitor height × 0.7 > width
 
+<img src='img/presets/vertical.png' width='150' />
 
-Additional commands
+**Assistant**
 
-*When Menu opened*
+<img src='img/presets/assistant.png' width='150' />
 
-* `←, ↑, →, ↓` - moving across the menu with arrow
-* `enter` - choose selected position
+**Advanced**
+
+<img src='img/presets/advanced.png' width='150' />
+
+### Shortcuts (when window manager is displayed)
+
+| Key | Action |
+|-----|--------|
+| `← ↑ → ↓` | Navigate |
+| `Enter` | Select position |
+| `A` | Toggle shortcut letters |
+| `Esc` / `Backspace` | Go back |
+| Letter combo | Ace jump (see below) |
+
+<img src='img/presets/horizontal_with_keys.png' width='150' />
 
 ## Installation
 
@@ -44,53 +51,28 @@ After installing BetterTouchTool, you can import/export configurations from the 
 ![Screenshot](img/change-link.png)
 
 
-#### Advanced installation 
+#### Custom installation
 1. Clone the repo
 2. Install dependencies
 ```shell
-yarn install
+pnpm install
 ```
-3. Generate HTML page
+3. Edit `.env` or source code.
+4. Generate HTML page
 ```shell
-yarn build
+pnpm build
 ```
-4. Import preset `WindowManager.bttpreset`
+5. Import preset `WindowManager.bttpreset`
 ![Screenshot](img/find-webview.png)
 
-5. Change HTML source to locally generated file in `<root>/dist/WindowManager.html`
-
-
-### Running local dev server
-Run a local dev server to preview changes:
-```shell
-yarn start
-``` 
+6. Change HTML source to locally generated file in `<root>/dist/WindowManager.html`
 
 #### Customization
 
-Create **`.env`**, where you can define next properties
-
-```js
-// src/vite-env.d.ts
-// display shortcuts
-readonly VITE_DISPLAY_SHORTCUTS: "true" | "false";
-// different display layout styles
-readonly VITE_DISPLAY_LAYOUT:
-	| "horizontal"
-	| "vertical"
-	| "size32"
-	| "advanced";
-// left side is a default value
-// value changing the letters used for shortcuts, right is based on the right keyboard part
-readonly VITE_KEYBOARD_SIDE: "left" | "right";
-```
-
-for example
 ```bash
-// .env
 VITE_DISPLAY_SHORTCUTS = true
-VITE_DISPLAY_STYLE = size32
-VITE_KEYBOARD_SIDE = right
+VITE_DISPLAY_STYLE = horizontal # horizontal | vertical | size32 | advanced
+VITE_KEYBOARD_SIDE = left # left | right
 ```
 
 * `src/types.ts` define custom preset
@@ -106,10 +88,10 @@ Update css variable in style.css
 }
 ```
 
-Run `yarn build` to generate a new window manager.
+Run `pnpm build` to generate a new window manager.
 
 #### Done 🤟
 
 ## License
 
-Licensed under the [WTFPL](http://www.wtfpl.net/) license.
+Licensed under the [MIT](https://opensource.org/licenses/MIT) license.

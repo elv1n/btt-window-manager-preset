@@ -157,6 +157,15 @@ const createIcon = ([size, side]: [Size, Side]) => {
     case Size.PercentSquare60:
       domSize = [60, 60];
       break;
+    case Size.AssistantPosition:
+      domSize = [50, 60];
+      classNames.push('sAssistant');
+      break;
+    case Size.CenterLarge:
+      domSize = [70, 70];
+      classNames.push('sCenterLarge');
+
+      break;
     case Size.Full:
       domSize = [100, 100];
       break;
@@ -222,7 +231,10 @@ const renderList = (el: HTMLDivElement, preset: Positions) => {
     `;
   });
   el.innerHTML = `<div id="list">${elements.join('')}</div>`;
-  setLetterVisibility(el);
+  const listEl = el.querySelector<HTMLDivElement>("#list");
+  if (listEl) {
+    setLetterVisibility(listEl);
+  }
 };
 
 function renderApp() {

@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "vite dev",
-    "build": "vite build && mv dist/index.html ./WindowManager.html"
+    "build": "vite build && mv dist/index.html ./WindowManager.html",
+    "build:prod": "[ -f .env.local ] && mv .env.local .env.local.tmp; pnpm build; [ -f .env.local.tmp ] && mv .env.local.tmp .env.local"
   },
   "devDependencies": {
     "eslint-config-elv1n-react": "^1.3.1",

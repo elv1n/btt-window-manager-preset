@@ -8,7 +8,8 @@ interface ImportMetaEnv {
 		| "horizontal"
 		| "vertical"
 		| "size32"
-		| "advanced";
+		| "advanced"
+		| "assistant";
 	// by default left
 	// value changing the letters used for shortcuts, right is based on the right keyboard part
 	readonly VITE_KEYBOARD_SIDE: "left" | "right";

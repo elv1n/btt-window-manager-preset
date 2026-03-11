@@ -46,6 +46,10 @@ export const getTrigger = ([size, side]: [Size, Side]) => {
       trigger.push('two_third');
       trigger.push(side);
       break;
+    case Size.AssistantPosition:
+      return 'assistant_position';
+    case Size.CenterLarge:
+      return 'center_large';
     case Size.Full: {
       if (side === Side.Next) {
         trigger.push('next_monitor_full');

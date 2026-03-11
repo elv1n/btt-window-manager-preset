@@ -7,6 +7,8 @@ export enum Size {
 	Full,
 	FullBright,
 	PercentSquare60,
+	AssistantPosition,
+	CenterLarge,
 }
 
 export enum Side {
@@ -62,6 +64,7 @@ enum DisplayStyle {
 	Vertical = "vertical",
 	Size32 = "size32",
 	Advanced = "advanced",
+	Assistant = "assistant",
 }
 
 const PRESET: Record<string | DisplayStyle, Positions> = {
@@ -134,6 +137,27 @@ const PRESET: Record<string | DisplayStyle, Positions> = {
 		twoThird[3],
 		twoThird[1],
 		quarters[2],
+	],
+	[DisplayStyle.Assistant]: [
+		// Q1 — center & main
+		[Size.AssistantPosition, Side.MiddleX],
+		[Size.CenterLarge, Side.MiddleX],
+		twoThird[3],
+		oneThird[1],
+		// Q1 bottom + Q2 top
+		halves[4],
+		common[0],
+		oneThird[3],
+		twoThird[1],
+		// Q3 — quarter corners
+		quarters[0],
+		quarters[1],
+		common[1],
+		quartersCenter[4],
+		quarters[3],
+		quarters[2],
+		common[3],
+		common[4],
 	],
 	[DisplayStyle.Size32]: [
 		// top row
