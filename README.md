@@ -3,7 +3,7 @@
 Move and resize windows with easy and you don't need to know a lot of commands.
 Customise position preset the way you like, or ask your agent!
 
-![Window manager preview](img/preview.gif)
+<video src="img/preview.mp4" width="600" autoplay loop muted></video>
 
 **Just press `⌘ + ⇧ + A` and click the position**
 

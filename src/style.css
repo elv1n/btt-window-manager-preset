@@ -1,6 +1,31 @@
 :root {
 	--size: 50px;
 	--padding: 3px;
+	--bg: #f3f3f3;
+	--border: #1a1a1a;
+	--icon-bg: #1a1a1a;
+	--icon-color: #fff;
+	--icon-bright-bg: #fff;
+	--icon-bright-color: #1a1a1a;
+	--active-color: #2b719c;
+	--plus-color: #fff;
+	--letter-bg: #ffff00b5;
+	--letter-color: #1a1a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #2a2a2a;
+		--border: #555;
+		--icon-bg: #e0e0e0;
+		--icon-color: #2a2a2a;
+		--icon-bright-bg: #2a2a2a;
+		--icon-bright-color: #e0e0e0;
+		--active-color: #4a9ece;
+		--plus-color: #2a2a2a;
+		--letter-bg: #f0c030e0;
+		--letter-color: #1a1a1a;
+	}
 }
 * {
 	margin: 0;
@@ -14,7 +39,7 @@ body {
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
-	background: #f3f3f3;
+	background: var(--bg);
 }
 
 #list {
@@ -34,7 +59,7 @@ body {
 	background: transparent;
 	width: calc(var(--size) - 2px);
 	height: calc(var(--size) - 2px);
-	border: 2px solid #1a1a1a;
+	border: 2px solid var(--border);
 	font-size: calc(4px + var(--size) / 2);
 }
 
@@ -42,22 +67,22 @@ body {
 	position: relative;
 	width: calc(var(--size) / 2);
 	height: calc(var(--size) / 2);
-	border: 1px solid #1a1a1a;
+	border: 1px solid var(--border);
 	font-size: 14px;
 }
 
 .icon {
 	position: absolute;
-	background: #1a1a1a;
-	color: #fff;
+	background: var(--icon-bg);
+	color: var(--icon-color);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .icon.bright {
-	color: #1a1a1a;
-	background: #fff;
+	color: var(--icon-bright-color);
+	background: var(--icon-bright-bg);
 }
 
 .top {
@@ -90,7 +115,7 @@ body {
     position: absolute;
     width: 2px; /* thickness of the plus */
     height: 60%; /* full height of the parent */
-    background: #fff; /* color of the plus */
+    background: var(--plus-color);
 }
 
 .increaseCenter::after,
@@ -100,7 +125,7 @@ body {
 	margin: 2px;
     height: 2px; /* thickness of the plus */
     width: 60%; /* full width of the parent */
-    background: #fff; /* color of the plus */
+    background: var(--plus-color);
 }
 .middleX.s2\/3 { left: 15%; }
 .middleX.s1\/3 { left: 37.5%; }
@@ -119,8 +144,8 @@ body {
 
 #list .active .icon,
 #list button:hover .icon {
-	background: #2b719c;
-	color: #2b719c !important;
+	background: var(--active-color);
+	color: var(--active-color) !important;
 }
 
 #settings {
@@ -139,7 +164,8 @@ body {
 
 span.letter {
 	position: absolute;
-	background: #ffff00b5;
+	background: var(--letter-bg);
+	color: var(--letter-color);
 	font-size: 10px;
 	bottom: 0;
 	right: 0;
